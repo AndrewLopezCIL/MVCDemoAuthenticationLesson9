@@ -106,7 +106,7 @@ namespace MVCDemo.Controllers
                 }
                 return View(membership);
             }
-
+            //test
             // POST: Memberships/Delete/5
             [HttpPost, ActionName("Delete")]
             [ValidateAntiForgeryToken]
