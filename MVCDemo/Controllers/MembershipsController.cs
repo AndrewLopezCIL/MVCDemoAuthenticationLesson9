@@ -18,6 +18,7 @@ namespace MVCDemo.Controllers
             private MemberDBContext db = new MemberDBContext();
 
             // GET: Memberships
+            [AllowAnonymous]
             public ActionResult Index()
             {
                 return View(db.Members.ToList());
@@ -62,6 +63,7 @@ namespace MVCDemo.Controllers
             }
 
             // GET: Memberships/Edit/5
+            [Authorize (Roles ="Admin, Manager")]
             public ActionResult Edit(int? id)
             {
                 if (id == null)
